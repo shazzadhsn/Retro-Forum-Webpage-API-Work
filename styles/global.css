@@ -4,4 +4,11 @@
 * {
     font-family: "Mulish", sans-serif;
 }
-
+.hero-search-bar:focus {
+    border: none;
+    outline: none;
+}
+#hero-section {
+    background-image: url("../assets/images/bgbanner.png");
+    background-size: cover;
+}
