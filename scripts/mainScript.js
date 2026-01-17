@@ -10,6 +10,44 @@ navBar.innerHTML = `
         <button class="btn btn-active btn-primary bg-[#797DFC] text-white border-none rounded-3xl font-bold text-lg">Sign In</button>
     </div>
 `;
+
+// Hero Section
+const heroSection = document.getElementById("hero-section");
+heroSection.classList = `hero-section container px-5 sm:px-10 bg-[#12132D] rounded-3xl flex flex-col lg:flex-row items-center justify-around mt-10`;
+heroSection.innerHTML = `
+    <div class="hero-left-part">
+        <h1 id="hero-heading" class="hero-heading text-white font-black text-4xl text-center md:text-left md:text-5xl py-5 md:py-10">Welcome to the <br>ReTro Forum</h1>
+        <p id="hero-description" class="hero-description text-white text-center md:text-left font-medium mb-5 md:mb-10">Share your favorite opinion and win and wp<br>forum coffee mug!</p>
+        <div id="searh-input" class="pb-10 flex justify-evenly gap-5 flex-col md:flex-row">
+            <input id="search-field" type="text" placeholder="Search here anything" class="hero-search-bar rounded-4xl bg-white py-4 pl-8 md:pr-60 md:py-4 font-medium border-none">
+            <button onclick="searchBtnClicked()" id="search-btn" class="search-btn bg-[#797DFC] px-8 py-4 font-bold rounded-4xl text-white">Search</button>
+        </div>
+    </div>
+    <div class="hero-right-part text-black bg-white p-5 mb-5 w-10/12 lg:w-3/12 h-42 rounded-2xl flex items-center justify-center">
+        <div id="hero-right-text-content" class="w-12/12">
+            <div id="registered-users" class="w-9/12 flex justify-between mx-auto my-2 font-bold">
+                <p>Registered Users</p> <p>01</p>
+            </div>
+            <div id="forum" class="w-9/12 flex justify-between mx-auto my-2 font-bold">
+                <p>Forum</p> <p>05</p>
+            </div>
+            <div id="topic" class="w-9/12 flex justify-between mx-auto my-2 font-bold">
+                <p>Topic</p> <p>01</p>
+            </div>
+            <div id="replies" class="w-9/12 flex justify-between mx-auto my-2 font-bold">
+                <p>Replies</p> <p>01</p>
+            </div>
+        </div>
+    </div>
+`;
+
+// Let's Discuss Section
+const letsDiscus = document.getElementById("lets-discuss");
+letsDiscus.classList = `lets-discuss mt-10 md:mt-15`;
+letsDiscus.innerHTML = `
+    <h2 class="text-center text-3xl md:text-4xl font-black">Let's Discuss</h2>
+    <p class="text-center mt-2 md:mt-5 w-9/12 mx-auto">Yes, you can run unit tests and view the results directly within the app. The<br>integrated testing features allow for a streamlined.</p>
+`;
 // post container
 const postContainer = document.getElementById("all-post-container");
 // fetching all post list using api
