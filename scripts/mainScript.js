@@ -1,3 +1,15 @@
+// nav section
+const navBar = document.getElementById("nav-bar");
+navBar.innerHTML = `
+    <img id="nav-logo" class="nav-logo mb-4" src="./assets/images/logo.png" alt="Retro Logo">
+    <div id="nav-other-content" class="nav-other-content items-center flex items-center md:inline-block">
+        <button id="home-btn" class="btn btn-circle mx-2"><img src="./assets/icons/home.png" class="w-6" alt="Home Icon"></button>
+        <button id="edit-btn" class="btn btn-circle mx-2"><img src="./assets/icons/edit.png" class="w-6" alt="Home Icon"></button>
+        <button id="add-friend-btn" class="btn btn-circle mx-2"><img src="./assets/icons/add-friend.png" class="w-6" alt="Home Icon"></button>
+        <button id="flag-btn" class="btn btn-circle mx-2"><img src="./assets/icons/flag.png" class="w-6" alt="Home Icon"></button>
+        <button class="btn btn-active btn-primary bg-[#797DFC] text-white border-none rounded-3xl font-bold text-lg">Sign In</button>
+    </div>
+`;
 // post container
 const postContainer = document.getElementById("all-post-container");
 // fetching all post list using api
