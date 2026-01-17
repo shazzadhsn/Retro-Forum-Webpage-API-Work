@@ -92,4 +92,22 @@ const categoryPostFunc = async(searchFieldVal) => {
 
 }
 
+// forum section creation
+const forumContent = document.createElement("div");
+forumContent.classList = `forum-content flex bg-[#12132D] justify-center items-center p-10 rounded-2xl flex-col md:flex-row`;
+forumContent.innerHTML = `
+    <div class="forum-left-content text-white">
+        <h2 class="text-2xl md:text-3xl text-center font-black md:text-left">Join Our Forum</h2>
+        <p class="forum-description text-center w-11/12 mx-auto mt-5 md:text-left md:mx-0">Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br class="hidden md:block"> run unit tests and view the results directly within the app.</p>
+        <button class="btn btn-active btn-primary bg-[#797DFC] text-white border-none rounded-3xl font-bold text-lg block mx-auto md:mx-0 mt-5">Registered Users</button>
+    </div>
+    <div class="forum-right-content flex justify-center items-center mt-10 md:mt-0">
+        <img class="w-10/12" src="./assets/images/joinforum.png" alt="">
+    </div>
+`;
+const forumContainer = document.getElementById("forum-container");
+forumContainer.appendChild(forumContent);
+
+
+
 
