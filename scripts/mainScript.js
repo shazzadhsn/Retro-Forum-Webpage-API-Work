@@ -158,6 +158,68 @@ forumContent.innerHTML = `
 const forumContainer = document.getElementById("forum-container");
 forumContainer.appendChild(forumContent);
 
+const latestPost = document.getElementById("latest-post");
+latestPost.innerHTML = `
+    <h2 class="text-center text-3xl md:text-4xl font-black">Latest Post</h2>
+    <p class="text-center mt-2 md:mt-5 w-9/12 mx-auto">Yes, you can run unit tests and view the results directly within the app. The<br>integrated testing features allow for a streamlined.</p>
+`;
 
 
+// Latest Post Dynamic Section
+const latestPostCreation = (post) => {
+    const latestPostCard = document.createElement("div");
+    latestPostCard.classList = `latest-post-card bg-white border-gray-300 border-2 rounded-2xl p-5 my-5`;
+    latestPostCard.innerHTML = `
+        <div class="latest-post-image mb-5">
+            <img class="rounded-2xl" src="${post.cover_image}" alt="">
+        </div>
+        <div class="flex items-center gap-2 mb-3">
+            <i class="fa-regular fa-calendar text-black font-medium"></i>
+            <p>${post?.author?.posted_date || "No Date Available"}</p>
+        </div>
+        <h3 class="font-bold text-xl W-10/12 mb-2">${post.title}</h3>
+        <p class="h-24 mb-2">${post.description}</p>
+        <div class="flex items-center gap-3">
+            <div class="avatar">
+                <div class="w-12 rounded-full">
+                    <img src="${post.profile_image}" />
+                </div>
+            </div>
+            <div>
+                <p id="name" class="font-bold text-lg">${post.author.name}</p>
+                <p id="designation">${post?.author?.designation || "Designation Unknown"}</p>
+            </div>
+        </div>
+    `;
 
+    const latestPostContent = document.getElementById("latest-post-content");
+    latestPostContent.appendChild(latestPostCard);
+}
+
+const latestPostFetch = async() => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+    const data = await res.json();
+    console.log(data);
+    for(post of data) {
+        latestPostCreation(post);
+    }
+}
+
+latestPostFetch();
+
+// Footer Section
+const footer = document.getElementById("footer");
+footer.innerHTML = `
+    <section id="footer-section" class="footer-section w-9/12 md:w-4/12 text-center mx-auto">
+        <img src="./assets/images/logo.png" class="block mx-auto" alt="">
+        <p class="footer-description my-5">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC</p>
+        <div class="icons flex gap-5 text-xl justify-center mx-auto">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
+        </div>
+    </section>
+    <hr class="w-9/12 md:w-6/12 mx-auto mt-5">
+    <p class="text-[#95a5a6] text-center mt-5">2017, All Rights Reserved.</p>
+`;
